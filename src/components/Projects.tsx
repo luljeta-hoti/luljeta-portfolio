@@ -39,7 +39,7 @@ export const projects = [
       'One challenge was handling unexpected changes caused by repeated interactions with interface elements while working under time pressure. I had to review the interactions, correct the issues and make sure the application was ready for submission.',
     learning:
       'This project gave me practical experience with C# desktop application development, Windows Forms, SQL Server integration and CRUD operations. It also helped me understand how interface interactions connect with database functionality.',
-    githubUrl:  'https://github.com/',
+    githubUrl:  'https://github.com/luljeta-hoti/smiledent',
     presentationUrl: '',
     visual: (
       <div className="preview-window project-image-preview">
@@ -72,7 +72,7 @@ export const projects = [
     challenge: '',
     learning:
       'The project provided practical experience with PHP, SQL and the role of backend functionality in an e-commerce application.',
-    githubUrl: 'https://github.com/',
+    githubUrl: 'https://github.com/luljeta-hoti/zelon',
     presentationUrl: '',
     visual: (
       <div className="preview-window project-image-preview">
@@ -89,7 +89,7 @@ export const projects = [
     dateLabel: 'March 2026',
     description:
       'A travel agency website built with HTML, CSS and JavaScript, presenting services, travel packages and company information.',
-    technologies: ['HTML', 'CSS', 'JavaScript'],
+    technologies: ['HTML', 'CSS',],
     className: 'globetravel',
     image: globeTravelImage,
     alt: 'GlobeTravel travel agency website screenshot',
@@ -116,7 +116,7 @@ export const projects = [
     challenge: '',
     learning:
       'This project strengthened my practical understanding of HTML, CSS, Flexbox, CSS Grid, reusable styling, responsive layouts, visual hierarchy and interactive web elements. It also gave me experience developing a complete website from scratch.',
-    githubUrl: 'https://github.com/',
+    githubUrl: 'https://github.com/luljeta-hoti/globetravel',
     presentationUrl: '',
     visual: (
       <div className="preview-window project-image-preview">
