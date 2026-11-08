@@ -1,0 +1,293 @@
+
+.skills-section {
+  position: relative;
+  width: 100%;
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 110px 7% 125px;
+  border-top: 1px solid rgba(255, 255, 255, 0.07);
+}
+
+/* Main heading */
+
+.skills-heading {
+  width: 100%;
+  max-width: none;
+  margin-top: 35px;
+}
+.skills-heading h2 {
+  color: #f5f5f7;
+  font-size: clamp(38px, 5vw, 58px);
+  font-weight: 700;
+  letter-spacing: -2.5px;
+  line-height: 1.2;
+}
+
+.skills-heading h2 span {
+  color: #9479ec;
+}
+
+.skills-heading p {
+  width: max-content;
+  max-width: none;
+  margin-top: 18px;
+  color: #92919e;
+  font-size: 14px;
+  line-height: 1.9;
+  white-space: nowrap;
+}
+
+/* Two-column layout */
+
+.skills-content {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 55px;
+  margin-top: 55px;
+}
+
+.skills-column,
+.certifications-column {
+  min-width: 0;
+}
+
+/* Column headings */
+
+.column-heading {
+  display: flex;
+  align-items: flex-start;
+  min-height: 46px;
+  margin-bottom: 23px;
+}
+
+.column-heading h3 {
+  color: #eeeaf6;
+  font-size: 18px;
+  font-weight: 600;
+  letter-spacing: -0.5px;
+}
+
+.column-heading h3 span {
+  color: #9479ec;
+}
+
+/* Certifications */
+
+.certifications-list {
+  border-top: 1px solid rgba(255, 255, 255, 0.09);
+}
+
+.certification-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 15px;
+  min-height: 88px;
+  box-sizing: border-box;
+  padding: 18px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.09);
+}
+
+.certification-info {
+  min-width: 0;
+}
+
+.certification-info h4 {
+  color: #e9e6f1;
+  font-size: 13px;
+  font-weight: 500;
+  line-height: 1.6;
+}
+
+.certification-info span {
+  display: block;
+  margin-top: 6px;
+  color: #9479ec;
+  font-size: 10px;
+  letter-spacing: 0.5px;
+}
+
+.certification-date {
+  flex-shrink: 0;
+  color: #858291;
+  font-size: 10px;
+  text-align: right;
+}
+
+/* Technical skills */
+
+.skills-list {
+  width: 100%;
+}
+
+.skill-row {
+  display: grid;
+  grid-template-columns: 165px minmax(0, 1fr);
+  align-items: center;
+  gap: 20px;
+  min-height: 88px;
+  box-sizing: border-box;
+  padding: 18px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.09);
+}
+
+.skill-row:first-child {
+  border-top: 1px solid rgba(255, 255, 255, 0.09);
+}
+
+.skill-row h4 {
+  color: #e9e6f1;
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 1.6;
+}
+
+.skill-tags {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+}
+
+.skill-tags span {
+  padding: 8px 11px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 4px;
+  background: rgba(255, 255, 255, 0.025);
+  color: #c4c0d1;
+  font-size: 10px;
+  transition:
+    border-color 0.2s ease,
+    color 0.2s ease,
+    background 0.2s ease;
+}
+
+.skill-tags span:hover {
+  border-color: rgba(151, 124, 240, 0.4);
+  background: rgba(151, 124, 240, 0.06);
+  color: #d5c9ff;
+}
+
+/* Smaller laptops */
+
+@media (max-width: 1100px) {
+  .skills-content {
+    gap: 40px;
+  }
+
+  .skill-row {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+}
+
+/* Tablets */
+
+@media (max-width: 850px) {
+  .skills-section {
+    padding-left: 5%;
+    padding-right: 5%;
+  }
+
+  .skills-content {
+    grid-template-columns: 1fr;
+    gap: 45px;
+  }
+
+  .skill-row {
+    grid-template-columns: 180px minmax(0, 1fr);
+    gap: 25px;
+  }
+}
+
+/* Mobile */
+
+@media (max-width: 650px) {
+  .skills-section {
+    padding: 85px 7% 100px;
+  }
+
+  .skills-heading {
+    margin-top: 28px;
+  }
+
+  .skills-heading h2 {
+    font-size: clamp(36px, 8vw, 48px);
+    letter-spacing: -1.8px;
+  }
+
+  .skills-heading p {
+    font-size: 13px;
+  }
+
+  .skills-content {
+    gap: 45px;
+    margin-top: 40px;
+  }
+
+  .column-heading h3 {
+    font-size: 16px;
+  }
+
+  .skill-row {
+    grid-template-columns: 1fr;
+    gap: 13px;
+    min-height: 88px;
+    padding: 18px 0;
+  }
+
+  .skill-tags {
+    gap: 8px;
+  }
+
+  .skill-tags span {
+    padding: 8px 11px;
+    font-size: 10px;
+  }
+
+  
+
+  .certification-item {
+    min-height: 88px;
+    padding: 18px 0;
+  }
+
+  .certification-info h4 {
+    font-size: 12px;
+  }
+
+  .certification-date {
+    font-size: 9px;
+  }
+}
+
+/* Very narrow phones */
+
+@media (max-width: 380px) {
+  .skills-section {
+    padding-left: 6%;
+    padding-right: 6%;
+  }
+
+  .skills-heading h2 {
+    font-size: 35px;
+  }
+
+  .certification-item {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 7px;
+  }
+
+  .certification-date {
+    text-align: left;
+  }
+}
+
+/* Reduced motion */
+
+@media (prefers-reduced-motion: reduce) {
+  .skill-tags span {
+    transition: none;
+  }
+}
