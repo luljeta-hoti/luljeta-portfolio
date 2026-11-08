@@ -1,6 +1,6 @@
 
 import { Link } from 'react-router-dom'
-import smiledentImage from '../assets/projects/smiledent.png'
+import smiledentImage from '../assets/projects/SmileDent.png'
 import zelonImage from '../assets/projects/zelon.png'
 import globeTravelImage from '../assets/projects/globetravel.webp'
 import './Projects.css'
