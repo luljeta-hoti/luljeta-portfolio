@@ -1,5 +1,6 @@
 
 import { Link, useParams } from 'react-router-dom'
+import { Helmet } from 'react-helmet-async'
 import Navbar from '../components/Navbar'
 import Footer from '../components/Footer'
 import Reveal from '../components/Reveal'
@@ -16,7 +17,16 @@ function ProjectDetail() {
   if (!project) {
     return (
       <>
+        <Helmet>
+          <title>Project Not Found | Luljeta Hoti</title>
+          <meta
+            name="robots"
+            content="noindex, follow"
+          />
+        </Helmet>
+
         <Navbar />
+
         <main className="project-not-found">
           <p className="section-eyebrow">PROJECT NOT FOUND</p>
           <h1>This project doesn't exist.</h1>
@@ -24,6 +34,7 @@ function ProjectDetail() {
             ← Back to all projects
           </Link>
         </main>
+
         <Footer />
       </>
     )
@@ -32,6 +43,12 @@ function ProjectDetail() {
   const currentIndex = sortedProjects.findIndex(
     (item) => item.slug === slug
   )
+
+  const pageTitle = `${project.name} | Luljeta Hoti Portfolio`
+
+  const pageDescription = project.description
+
+  const canonicalUrl = `https://luljeta-portfolio.vercel.app/projects/${project.slug}`
 
   const previousProject =
     currentIndex > 0
@@ -45,6 +62,37 @@ function ProjectDetail() {
 
   return (
     <>
+      <Helmet>
+        <title>{pageTitle}</title>
+
+        <meta
+          name="description"
+          content={pageDescription}
+        />
+
+        <meta name="author" content="Luljeta Hoti" />
+
+        <link
+          rel="canonical"
+          href={canonicalUrl}
+        />
+
+        <meta property="og:type" content="article" />
+        <meta property="og:url" content={canonicalUrl} />
+        <meta property="og:title" content={pageTitle} />
+        <meta
+          property="og:description"
+          content={pageDescription}
+        />
+
+        <meta name="twitter:card" content="summary" />
+        <meta name="twitter:title" content={pageTitle} />
+        <meta
+          name="twitter:description"
+          content={pageDescription}
+        />
+      </Helmet>
+
       <Navbar />
 
       <main className="project-detail-page">
@@ -179,40 +227,40 @@ function ProjectDetail() {
               </div>
 
               {(project.githubUrl || project.presentationUrl) && (
-  <div className="detail-sidebar-links">
-    <p className="section-eyebrow">PROJECT RESOURCES</p>
+                <div className="detail-sidebar-links">
+                  <p className="section-eyebrow">PROJECT RESOURCES</p>
 
-    {project.githubUrl && (
-      <a
-        href={project.githubUrl}
-        target="_blank"
-        rel="noopener noreferrer"
-        className="resource-link"
-      >
-        <span>
-          <strong>Source Code</strong>
-          <small>Explore the repository on GitHub</small>
-        </span>
-        <span className="resource-arrow">↗</span>
-      </a>
-    )}
+                  {project.githubUrl && (
+                    <a
+                      href={project.githubUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="resource-link"
+                    >
+                      <span>
+                        <strong>Source Code</strong>
+                        <small>Explore the repository on GitHub</small>
+                      </span>
+                      <span className="resource-arrow">↗</span>
+                    </a>
+                  )}
 
-    {project.presentationUrl && (
-      <a
-        href={project.presentationUrl}
-        target="_blank"
-        rel="noopener noreferrer"
-        className="resource-link"
-      >
-        <span>
-          <strong>Project Presentation</strong>
-          <small>View the project demonstration</small>
-        </span>
-        <span className="resource-arrow">↗</span>
-      </a>
-    )}
-  </div>
-)}
+                  {project.presentationUrl && (
+                    <a
+                      href={project.presentationUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="resource-link"
+                    >
+                      <span>
+                        <strong>Project Presentation</strong>
+                        <small>View the project demonstration</small>
+                      </span>
+                      <span className="resource-arrow">↗</span>
+                    </a>
+                  )}
+                </div>
+              )}
             </div>
           </aside>
         </div>
