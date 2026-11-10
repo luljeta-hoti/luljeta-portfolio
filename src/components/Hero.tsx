@@ -135,19 +135,32 @@ function Hero() {
           </p>
 
           <div className="hero-actions">
-            <a href="#work" className="primary-button">
-              View my projects <span>↗</span>
-            </a>
+  <a href="#work" className="primary-button">
+    View my projects <span>↗</span>
+  </a>
 
-            <a href="/Luljeta-Hoti-CV.pdf" className="cv-button" download>
-              Download CV <span>↓</span>
-            </a>
+  <a
+    href="/Luljeta%20Hoti%20CV.pdf"
+    target="_blank"
+    rel="noopener noreferrer"
+    className="cv-button"
+  >
+    View CV <span>↗</span>
+  </a>
 
-            <a href="#contact" className="hero-contact-link">
-              Get in touch <span>↗</span>
-            </a>
-          </div>
+ <a
+  href="/Luljeta%20Hoti%20CV.pdf"
+  target="_blank"
+  rel="noopener noreferrer"
+  className="hero-contact-link"
+>
+  Download CV <span>↓</span>
+</a>
 
+  <a href="#contact" className="hero-contact-link">
+    Get in touch <span>↗</span>
+  </a>
+</div>
           <div className="hero-details">
             <div className="detail-item">
               <span className="detail-label">BASED IN</span>
