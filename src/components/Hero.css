@@ -37,7 +37,6 @@
   width: 100%;
 }
 
-
 /* =========================================
    INTRODUCTION
 ========================================= */
@@ -63,7 +62,6 @@
   background: #a78bfa;
 }
 
-
 /* =========================================
    MAIN HEADING
 ========================================= */
@@ -78,8 +76,6 @@
   overflow: visible;
 }
 
-/* Character-by-character writing effect */
-
 .typing-line {
   display: inline;
 }
@@ -91,8 +87,6 @@
   animation: characterWrite 0.55s ease-out forwards;
   will-change: opacity, filter;
 }
-
-/* Gradient for the second line */
 
 .gradient-text .typing-char {
   background: linear-gradient(
@@ -123,7 +117,6 @@
   }
 }
 
-
 /* =========================================
    DESCRIPTION
 ========================================= */
@@ -138,7 +131,6 @@
   opacity: 0;
   animation: heroFadeUp 1.1s cubic-bezier(0.22, 1, 0.36, 1) 1.8s forwards;
 }
-
 
 /* =========================================
    BUTTONS AND LINKS
@@ -230,7 +222,6 @@
   font-size: 16px;
 }
 
-
 /* =========================================
    HERO DETAILS
 ========================================= */
@@ -271,7 +262,6 @@
   background: rgba(255, 255, 255, 0.12);
 }
 
-
 /* =========================================
    RIGHT-SIDE VISUAL
 ========================================= */
@@ -286,7 +276,9 @@
   justify-content: flex-end;
 }
 
-/* Code card */
+/* =========================================
+   CODE CARD
+========================================= */
 
 .about-card {
   position: relative;
@@ -319,7 +311,6 @@
     transform: translateY(0);
   }
 }
-
 
 /* =========================================
    ANIMATED CARD BORDER
@@ -369,7 +360,6 @@
     --border-angle: 360deg;
   }
 }
-
 
 /* =========================================
    EDITOR HEADER
@@ -433,7 +423,6 @@
   font-size: 15px;
   letter-spacing: 2px;
 }
-
 
 /* =========================================
    EDITOR CONTENT
@@ -503,7 +492,6 @@
   min-height: 8px;
 }
 
-
 /* =========================================
    CODE LINE REVEAL
 ========================================= */
@@ -559,7 +547,6 @@
   animation-delay: 1.1s;
 }
 
-
 /* =========================================
    BLINKING CURSOR
 ========================================= */
@@ -579,7 +566,6 @@
     visibility: hidden;
   }
 }
-
 
 /* =========================================
    EDITOR FOOTER
@@ -617,7 +603,6 @@
   color: #64748b;
 }
 
-
 /* =========================================
    GENERAL ANIMATION
 ========================================= */
@@ -633,7 +618,6 @@
     transform: translateY(0);
   }
 }
-
 
 /* =========================================
    TABLETS
@@ -663,7 +647,6 @@
     gap: 15px;
   }
 }
-
 
 /* =========================================
    TABLETS AND SMALLER SCREENS
@@ -704,7 +687,6 @@
     justify-content: center;
   }
 }
-
 
 /* =========================================
    MOBILE PHONES
@@ -800,7 +782,6 @@
   }
 }
 
-
 /* =========================================
    VERY NARROW PHONES
 ========================================= */
@@ -820,7 +801,6 @@
     max-width: 250px;
   }
 }
-
 
 /* =========================================
    REDUCED MOTION ACCESSIBILITY
@@ -850,12 +830,93 @@
 }
 
 /* =========================================
-   DISABLE BACKGROUND EFFECTS
+   BACKGROUND EFFECTS
 ========================================= */
 
-.hero-section::before,
-.hero-section::after,
 .hero-glow,
 .hero-trails {
   display: none;
+}
+
+/* =========================================
+   FULL-WIDTH GREY HERO DIVIDER
+========================================= */
+
+.hero-section {
+  border-bottom: none;
+}
+
+.hero-section::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 100vw;
+  height: 1px;
+  transform: translateX(-50%);
+
+  background: rgba(148, 163, 184, 0.07);
+
+  pointer-events: none;
+  z-index: 10;
+}
+
+/* =========================================
+   MOVING LIGHT ON DIVIDER
+========================================= */
+
+.hero-section::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 30%;
+  height: 1px;
+
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(96, 165, 250, 0.65) 35%,
+    rgba(167, 139, 250, 0.9) 65%,
+    transparent
+  );
+
+  box-shadow: 0 0 5px rgba(139, 124, 246, 0.18);
+
+  pointer-events: none;
+  z-index: 11;
+
+  animation: dividerTravel 7s linear infinite;
+}
+
+@keyframes dividerTravel {
+  0% {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+
+  8% {
+    opacity: 1;
+  }
+
+  90% {
+    opacity: 1;
+  }
+
+  100% {
+    transform: translateX(340%);
+    opacity: 0;
+  }
+}
+
+/* =========================================
+   REDUCED MOTION - DIVIDER
+========================================= */
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-section::before {
+    animation: none;
+    opacity: 0.5;
+    transform: none;
+  }
 }

@@ -805,3 +805,65 @@
 .project-card-link:hover .project-view-link {
   gap: 14px;
 }
+
+
+
+/* =========================================
+   ANIMATED SECTION DIVIDERS
+========================================= */
+
+.projects-section {
+  position: relative;
+  border-bottom: 1px solid rgba(148, 163, 184, 0.07);
+}
+
+.projects-section::after {
+  content: "";
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  width: 30%;
+  height: 1px;
+
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(96, 165, 250, 0.65) 35%,
+    rgba(167, 139, 250, 0.9) 65%,
+    transparent
+  );
+
+  box-shadow: 0 0 5px rgba(139, 124, 246, 0.18);
+  pointer-events: none;
+  z-index: 10;
+
+  animation: projectsDividerTravel 7s linear infinite;
+}
+
+@keyframes projectsDividerTravel {
+  0% {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+
+  8% {
+    opacity: 1;
+  }
+
+  90% {
+    opacity: 1;
+  }
+
+  100% {
+    transform: translateX(340%);
+    opacity: 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .projects-section::after {
+    animation: none;
+    opacity: 0.5;
+    transform: translateX(0);
+  }
+}
