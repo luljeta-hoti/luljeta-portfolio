@@ -72,35 +72,59 @@ function Hero() {
 
           
            
+
 <h1 className="hero-heading">
   <span className="typing-line">
-    {'Turning complex tasks'.split('').map((char, index) => (
-      <span
-        className="typing-char"
-        key={index}
-        style={{ animationDelay: `${index * 0.045}s` }}
-      >
-        {char === ' ' ? '\u00A0' : char}
-      </span>
-    ))}
+    {'Turning complex tasks'.split(' ').map((word, wordIndex, words) => {
+      const startIndex =
+        words.slice(0, wordIndex).join(' ').length +
+        (wordIndex > 0 ? 1 : 0)
+
+      return (
+        <span className="typing-word" key={wordIndex}>
+          {word.split('').map((char, charIndex) => (
+            <span
+              className="typing-char"
+              key={charIndex}
+              style={{
+                animationDelay: `${(startIndex + charIndex) * 0.045}s`
+              }}
+            >
+              {char}
+            </span>
+          ))}
+        </span>
+      )
+    })}
   </span>
 
   <br />
 
   <span className="typing-line gradient-text">
-    {'into simple applications.'.split('').map((char, index) => (
-      <span
-        className="typing-char"
-        key={index}
-        style={{
-          animationDelay: `${(21 + index) * 0.045}s`
-        }}
-      >
-        {char === ' ' ? '\u00A0' : char}
-      </span>
-    ))}
+    {'into simple applications.'.split(' ').map((word, wordIndex, words) => {
+      const startIndex =
+        words.slice(0, wordIndex).join(' ').length +
+        (wordIndex > 0 ? 1 : 0)
+
+      return (
+        <span className="typing-word" key={wordIndex}>
+          {word.split('').map((char, charIndex) => (
+            <span
+              className="typing-char"
+              key={charIndex}
+              style={{
+                animationDelay: `${(21 + startIndex + charIndex) * 0.045}s`
+              }}
+            >
+              {char}
+            </span>
+          ))}
+        </span>
+      )
+    })}
   </span>
 </h1>
+
 
 
           <p className="hero-description">

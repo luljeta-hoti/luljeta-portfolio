@@ -80,6 +80,12 @@
   display: inline;
 }
 
+.typing-word {
+  display: inline-block;
+  white-space: nowrap;
+  margin-right: 0.22em;
+}
+
 .typing-char {
   display: inline-block;
   opacity: 0;
