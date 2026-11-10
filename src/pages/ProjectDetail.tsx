@@ -1,5 +1,5 @@
-
 import { Link, useParams } from 'react-router-dom'
+import { useEffect } from 'react'
 import { Helmet } from 'react-helmet-async'
 import Navbar from '../components/Navbar'
 import Footer from '../components/Footer'
@@ -9,6 +9,13 @@ import './ProjectDetail.css'
 
 function ProjectDetail() {
   const { slug } = useParams()
+  useEffect(() => {
+  window.scrollTo({
+    top: 0,
+    left: 0,
+    behavior: 'instant'
+  })
+}, [slug])
 
   const project = sortedProjects.find(
     (item) => item.slug === slug
