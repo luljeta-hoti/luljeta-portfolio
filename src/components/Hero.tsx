@@ -139,20 +139,10 @@ function Hero() {
     View my projects <span>↗</span>
   </a>
 
-  <a
-    href="/Luljeta%20Hoti%20CV.pdf"
-    target="_blank"
-    rel="noopener noreferrer"
-    className="cv-button"
-  >
-    View CV <span>↗</span>
-  </a>
-
  <a
   href="/Luljeta%20Hoti%20CV.pdf"
-  target="_blank"
-  rel="noopener noreferrer"
-  className="hero-contact-link"
+  download="Luljeta Hoti CV.pdf"
+  className="cv-button"
 >
   Download CV <span>↓</span>
 </a>
