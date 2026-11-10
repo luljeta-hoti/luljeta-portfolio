@@ -4,7 +4,6 @@
 :root {
   font-family: 'Inter', sans-serif;
   color: #f5f5f5;
-  background: #0b0b0e;
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
@@ -20,8 +19,10 @@
 
 html {
   min-width: 320px;
+  min-height: 100%;
   scroll-behavior: smooth;
   scroll-padding-top: 80px;
+  background: #050609;
 }
 
 body {
@@ -29,7 +30,7 @@ body {
   min-height: 100vh;
   width: 100%;
   overflow-x: hidden;
-  background: #0b0b0e;
+  background: #050609;
 }
 
 #root {

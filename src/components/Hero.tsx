@@ -7,6 +7,62 @@ function Hero() {
     <section className="hero-section" id="home">
       <div className="hero-glow"></div>
 
+<div className="hero-trails" aria-hidden="true">
+  <svg
+    viewBox="0 0 1600 900"
+    preserveAspectRatio="none"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <defs>
+      <linearGradient id="trailBlue" x1="0%" y1="0%" x2="100%" y2="0%">
+        <stop offset="0%" stopColor="#3b82f6" stopOpacity="0" />
+        <stop offset="45%" stopColor="#60a5fa" stopOpacity="0.8" />
+        <stop offset="100%" stopColor="#818cf8" stopOpacity="0" />
+      </linearGradient>
+
+      <linearGradient id="trailViolet" x1="0%" y1="0%" x2="100%" y2="0%">
+        <stop offset="0%" stopColor="#818cf8" stopOpacity="0" />
+        <stop offset="50%" stopColor="#a78bfa" stopOpacity="0.8" />
+        <stop offset="100%" stopColor="#6366f1" stopOpacity="0" />
+      </linearGradient>
+
+      <filter id="trailBlur">
+        <feGaussianBlur stdDeviation="7" />
+      </filter>
+    </defs>
+
+    {/* Soft background waves */}
+    <g className="trail-glow" fill="none" filter="url(#trailBlur)">
+      <path d="M-100 260 C250 100 400 470 760 300 S1250 120 1700 280" />
+      <path d="M-100 570 C250 730 500 350 850 540 S1300 750 1700 470" />
+      <path d="M-100 720 C300 550 500 820 900 650 S1350 490 1700 700" />
+    </g>
+
+    {/* Fine moving light trails */}
+    <g className="trail-lines" fill="none">
+      <path
+        className="trail trail-one"
+        d="M-100 260 C250 100 400 470 760 300 S1250 120 1700 280"
+      />
+
+      <path
+        className="trail trail-two"
+        d="M-100 570 C250 730 500 350 850 540 S1300 750 1700 470"
+      />
+
+      <path
+        className="trail trail-three"
+        d="M-100 720 C300 550 500 820 900 650 S1350 490 1700 700"
+      />
+
+      <path
+        className="trail trail-four"
+        d="M-100 420 C300 280 550 550 900 390 S1300 250 1700 410"
+      />
+    </g>
+  </svg>
+</div>
+
       <div className="hero-layout">
         <Reveal direction="left" className="hero-content">
           <div className="hero-intro">
@@ -14,13 +70,38 @@ function Hero() {
             COMPUTER & SOFTWARE ENGINEERING STUDENT
           </div>
 
-          <h1>
-            Turning complex tasks
-            <br />
-            <span className="gradient-text">
-              into simple applications.
-            </span>
-          </h1>
+          
+           
+<h1 className="hero-heading">
+  <span className="typing-line">
+    {'Turning complex tasks'.split('').map((char, index) => (
+      <span
+        className="typing-char"
+        key={index}
+        style={{ animationDelay: `${index * 0.045}s` }}
+      >
+        {char === ' ' ? '\u00A0' : char}
+      </span>
+    ))}
+  </span>
+
+  <br />
+
+  <span className="typing-line gradient-text">
+    {'into simple applications.'.split('').map((char, index) => (
+      <span
+        className="typing-char"
+        key={index}
+        style={{
+          animationDelay: `${(21 + index) * 0.045}s`
+        }}
+      >
+        {char === ' ' ? '\u00A0' : char}
+      </span>
+    ))}
+  </span>
+</h1>
+
 
           <p className="hero-description">
             I'm Luljeta Hoti, a Computer and Software Engineering student
@@ -30,18 +111,18 @@ function Hero() {
           </p>
 
           <div className="hero-actions">
-  <a href="#work" className="primary-button">
-    View my projects <span>↗</span>
-  </a>
+            <a href="#work" className="primary-button">
+              View my projects <span>↗</span>
+            </a>
 
-  <a href="/Luljeta-Hoti-CV.pdf" className="cv-button" download>
-    Download CV <span>↓</span>
-  </a>
+            <a href="/Luljeta-Hoti-CV.pdf" className="cv-button" download>
+              Download CV <span>↓</span>
+            </a>
 
-  <a href="#contact" className="hero-contact-link">
-    Get in touch <span>↗</span>
-  </a>
-</div>
+            <a href="#contact" className="hero-contact-link">
+              Get in touch <span>↗</span>
+            </a>
+          </div>
 
           <div className="hero-details">
             <div className="detail-item">
@@ -59,43 +140,130 @@ function Hero() {
         </Reveal>
 
         <Reveal direction="right" className="hero-visual">
-          <div className="logo-glow"></div>
+          <div className="about-card">
+            <div className="about-card-header">
+              <div className="editor-dots">
+                <span className="editor-dot red"></span>
+                <span className="editor-dot yellow"></span>
+                <span className="editor-dot green"></span>
+              </div>
 
-          <svg
-            className="hero-logo"
-            xmlns="http://www.w3.org/2000/svg"
-            viewBox="360 340 540 480"
-            width="400"
-            height="300"
-            fill="none"
-            aria-label="LH handwritten logo"
-            role="img"
-          >
-            <defs>
-              <linearGradient
-                id="logoGradient"
-                x1="0%"
-                y1="0%"
-                x2="100%"
-                y2="100%"
-              >
-                <stop offset="0%" stopColor="#F4F0FF" />
-                <stop offset="50%" stopColor="#C4B5FD" />
-                <stop offset="100%" stopColor="#8B5CF6" />
-              </linearGradient>
-            </defs>
+              <div className="editor-tab">
+                <span className="file-icon">JS</span>
+                about.js
+              </div>
 
-            <path
-              transform="translate(630 580) scale(0.8) translate(-630 -580)"
-              fill="url(#logoGradient)"
-              stroke="url(#logoGradient)"
-              strokeWidth="5"
-              strokeLinejoin="round"
-              strokeLinecap="round"
-              fillRule="evenodd"
-              d="M 681,367 669,370 654,377 636,390 617,411 604,432 586,477 563,567 554,594 533,583 509,576 482,575 458,580 437,589 421,600 402,621 393,643 393,665 395,672 403,686 412,694 421,699 444,704 474,700 487,695 508,683 536,656 549,638 560,618 607,651 634,667 633,731 628,761 620,776 609,788 587,801 572,805 595,799 617,789 630,780 642,766 647,755 650,739 650,677 652,675 668,683 702,695 702,768 699,776 694,781 687,784 742,784 730,780 722,769 721,700 723,699 748,703 770,703 803,697 830,685 844,675 858,661 867,648 859,659 841,675 821,686 807,691 786,695 750,695 722,690 721,569 723,563 730,556 735,555 689,555 694,556 700,562 702,567 701,683 673,672 650,659 650,572 653,561 660,555 663,555 622,555 626,556 631,561 634,570 633,649 609,634 567,603 585,552 607,474 626,422 646,390 662,375 673,369 Z M 549,611 537,638 518,666 499,684 480,695 459,700 438,698 424,691 415,682 409,672 405,657 405,644 412,620 427,601 445,589 466,583 494,584 521,593 539,603 Z"
-            />
-          </svg>
+              <span className="editor-menu">•••</span>
+            </div>
+
+            <div className="about-card-body">
+              <div className="code-content">
+                <div className="code-line">
+                  <span className="line-number">1</span>
+                  <span>
+                    <span className="code-keyword">const</span>{' '}
+                    <span className="code-variable">luljeta</span> = {'{'}
+                  </span>
+                </div>
+
+                <div className="code-line">
+                  <span className="line-number">2</span>
+                  <span>
+                    &nbsp;&nbsp;<span className="code-property">role</span>:{' '}
+                    <span className="code-string">
+                      "Junior software engineer"
+                    </span>,
+                  </span>
+                </div>
+
+                <div className="code-line">
+                  <span className="line-number">3</span>
+                  <span>
+                    &nbsp;&nbsp;<span className="code-property">studying</span>:{' '}
+                    <span className="code-string">
+                      "Computer & Software Engineering"
+                    </span>,
+                  </span>
+                </div>
+
+                <div className="code-line">
+                  <span className="line-number">4</span>
+                  <span>
+                    &nbsp;&nbsp;<span className="code-property">languages</span>:{' '}
+                    [<span className="code-string">"C++"</span>,{' '}
+                    <span className="code-string">"C#"</span>,{' '}
+                    <span className="code-string">"PHP"</span>,{' '}
+                    <span className="code-string">"JavaScript"</span>],
+                  </span>
+                </div>
+
+                <div className="code-line">
+                  <span className="line-number">5</span>
+                  <span>
+                    &nbsp;&nbsp;<span className="code-property">builds</span>:{' '}
+                    [<span className="code-string">"web apps"</span>,{' '}
+                    <span className="code-string">"desktop apps"</span>,{' '}
+                    <span className="code-string">"UI designs"</span>],
+                  </span>
+                </div>
+
+                <div className="code-line">
+                  <span className="line-number">6</span>
+                  <span>
+                    &nbsp;&nbsp;<span className="code-property">openTo</span>:{' '}
+                    [<span className="code-string">"internships"</span>,{' '}
+                    <span className="code-string">"remote junior roles"</span>],
+                  </span>
+                </div>
+
+                <div className="code-line">
+                  <span className="line-number">7</span>
+                  <span>
+                    &nbsp;&nbsp;<span className="code-property">location</span>:{' '}
+                    <span className="code-string">"Kosovo"</span>
+                  </span>
+                </div>
+
+                <div className="code-line">
+                  <span className="line-number">8</span>
+                  <span>{'};'}</span>
+                </div>
+
+                <div className="code-line code-empty">
+                  <span className="line-number">9</span>
+                </div>
+
+                <div className="code-line">
+                  <span className="line-number">10</span>
+                  <span className="code-comment">
+                    // ship it, then make it better
+                  </span>
+                </div>
+
+                <div className="code-line">
+                  <span className="line-number">11</span>
+                  <span>
+                    <span className="code-keyword">export default</span>{' '}
+                    <span className="code-variable">luljeta</span>;
+                    <span className="code-cursor"></span>
+                  </span>
+                </div>
+              </div>
+            </div>
+
+            <div className="about-card-footer">
+              <div className="build-status">
+                <span className="status-check">✓</span>
+                Build passed
+              </div>
+
+              <div className="editor-status">
+                <span>JavaScript</span>
+                <span>UTF-8</span>
+                <span>Ln 11</span>
+              </div>
+            </div>
+          </div>
         </Reveal>
       </div>
     </section>
